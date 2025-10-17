@@ -1,0 +1,328 @@
+/* 2048 Game Styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Base styles - Mobile First */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #faf8ef;
+  color: #776e65;
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Mobile First - Base styles for mobile */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 100vw;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+.game-container {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Game board and controls text */
+.game-board {
+  margin: 10px 0;
+}
+
+.controls-text {
+  font-size: 14px;
+  margin: 10px 0;
+  text-align: center;
+  color: #776e65;
+}
+
+.controls-buttons {
+  margin: 15px 0;
+}
+
+.control-button {
+  width: 44px;
+  height: 44px;
+  margin: 4px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  background-color: #8f7a66;
+  color: #f9f6f2;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile First Responsive Design */
+
+/* Small mobile devices (default - mobile first) */
+.game-header {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  width: 100%;
+  padding: 60px 10px 10px 10px; /* Top padding to avoid hamburger overlap */
+}
+
+.game-header h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.hamburger-menu {
+  top: 10px;
+  left: 10px;
+  width: 44px;
+  height: 44px;
+}
+
+.help-button {
+  font-size: 14px;
+  padding: 8px 16px;
+  min-width: 100px;
+  margin-top: 12px;
+}
+
+.score-container, .best-score-container {
+  min-width: 60px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.restart-button, .undo-button, .redo-button {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+/* Medium mobile devices */
+@media (min-width: 375px) {
+  .game-header h1 {
+    font-size: 36px;
+  }
+  
+  .help-button {
+    font-size: 15px;
+    padding: 10px 18px;
+    min-width: 110px;
+  }
+  
+  .score-container, .best-score-container {
+    min-width: 70px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
+  .restart-button, .undo-button, .redo-button {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+/* Large mobile devices */
+@media (min-width: 480px) {
+  .app {
+    padding: 12px;
+  }
+  
+  .main-content {
+    gap: 15px;
+    padding: 0 12px;
+  }
+  
+  .game-header h1 {
+    font-size: 40px;
+  }
+  
+  .hamburger-menu {
+    top: 12px;
+    left: 12px;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .help-button {
+    font-size: 16px;
+    padding: 12px 20px;
+    min-width: 120px;
+    margin-top: 15px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .app {
+    padding: 15px;
+  }
+  
+  .main-content {
+    gap: 15px;
+    padding: 0 15px;
+  }
+  
+  .game-header {
+    gap: 12px;
+  }
+  
+  .game-header h1 {
+    font-size: 32px;
+  }
+  
+  .hamburger-menu {
+    top: 15px;
+    left: 15px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .help-button {
+    font-size: 13px;
+    padding: 8px 16px;
+    min-width: 100px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .app {
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  .main-content {
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .game-container {
+    max-width: 500px;
+  }
+  
+  .game-header h1 {
+    font-size: 36px;
+  }
+}
+
+/* Large Desktop - Side by side layout */
+@media (min-width: 1400px) {
+  .main-content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+  }
+  
+  .game-container {
+    flex: 0 0 auto;
+  }
+  
+  .game-header h1 {
+    font-size: 48px;
+  }
+}
+
+/* Tile animations */
+.tile {
+  transition: all 0.15s ease-in-out;
+}
+
+/* Game board responsive sizing */
+.game-board {
+  margin: 0 auto;
+}
+
+/* Help sidebar - theme-aware text colors handled in component */
+
+/* Professional help button highlighting - uses modern CSS techniques */
+
+.game-board {
+  width: 100%;
+  max-width: 500px;
+}
+
+@media (max-width: 600px) {
+  .game-board {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-board {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 400px) {
+  .game-board {
+    max-width: 320px;
+  }
+}
+
+/* Ensure game container is properly centered */
+.game-container {
+  margin: 0 auto;
+}
+
+/* Button hover effects */
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Accessibility */
+button:focus {
+  outline: 2px solid #8f7a66;
+  outline-offset: 2px;
+}
+
+/* Smooth animations for score updates */
+@keyframes scoreUpdate {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.score-update {
+  animation: scoreUpdate 0.2s ease-in-out;
+}
